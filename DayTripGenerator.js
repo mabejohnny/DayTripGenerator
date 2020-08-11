@@ -13,6 +13,7 @@ function runprogram () {
 
 
     let randomRestaurant = selectRandomRestaurant();
+
     }
 }
 
@@ -26,6 +27,7 @@ function selectRandomRestaurant () {
 
 
     let randomTranspo = selectRandomTranspo ();
+
     }
 }
     
@@ -39,6 +41,7 @@ function selectRandomTranspo () {
        
          
     let randomEntertainment = selectRandomEntertainment ();
+
     }
 }
 
@@ -52,6 +55,7 @@ function selectRandomEntertainment () {
           
         
     let userInput = reSelectRandomChoices ();
+
     }
 }
 
@@ -65,35 +69,36 @@ function reSelectRandomChoices () {
             alert("Your trip is booked!");
 
 }       
-         else if(userInput === "No"){
+         else if(userInput === "No") {
             switchCase ()
-            console.log("User is not satisfied with trip.")
         
     }
 }
 
 
 function switchCase () {
-
-    switch(userInput){
-        case "Change Destination":
+    let userInput;
+    userInput = prompt("Enter 1 to change destination. 2 to change your restaurant. 3 to change your transportation. 4 to change your entertainment. 5 if you have no idea how you got here, but know you wanna leave")
+    switch(userInput)
+    {
+        case "1":
             alert("your new destination choice is " + randomNumber + 1);
             console.log("user changed there destination to: " + randomNumber + 1);
             break;
-        case "Change Restaurant":
+        case "2":
             alert("Your new restaurant choice is " + randomNumbers + 1);
             console.log("user changed their restaurant to: " + randomNumbers + 1);
             break;
-        case "Change Transportation":
+        case "3":
             alert("Your new transportation will be: " + randomnumbersS + 1);
             console.log("user changed their transportation to: " + randomNumbersS + 1);
             break;
-        case "Change Entertainment":
+        case "4":
             alert("Your new entertainment will me " + randomNumbersSS + 1);
             console.log("user changed their entertainment to " + randomNumbersSS + 1)
             break;
-        case "Nevermind. I hit the wrong button!":
-            alert("Thats alright! Your still alright in our book!");
+        case "5":
+            alert("That's okay! Your still alright in our book!");
             console.log("User is happy with random trip!");
             break;
         default:
