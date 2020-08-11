@@ -58,21 +58,47 @@ function selectRandomEntertainment () {
         
 function reSelectRandomChoices () {
 
-    let userInput = prompt("If you are not satisfied with your trip, please enter what you would like to change");
+    let userInput = prompt("Enter Yes if you are satisfied with your trip, if not, enter No");
 
-    if(userInput === "Destination"){
-        console.log(randomNumber + 1);
-        alert("Your new destination pick is " + randomNumber, "I have also logged it in the console");
+    if(userInput === "Yes"){
+        console.log("The user is satisfied with their trip!");
+        alert("Your trip is booked! First you will start with a romantic, yet thrilling " + randomNumbersS + " ride, where you will be whisked away to " + randomNumbers + " for the most elegant of cuisines in all of " + randomNumbers + ". Now lets not forget about " + randomNumber + "!");
 
 }       
-    else if(userInput === "Restaurant"){
-        console.log(randomNumbers + 1)
-        alert("Your new restaurant pick is " + randomNumbers, "I have also logged it in the console");
+    else if(userInput === "No"){
+        console.log("User is not satisfied with trip.")
+        
     }
 }
 
 
 function switchCase () {
+
+    switch(userInput){
+        case "Change Destination":
+            alert("your new destination choice is " + randomNumber + 1);
+            console.log(randomNumber + 1);
+            break;
+        case "Change Restaurant":
+            alert("Your new restaurant choice is " + randomNumbers + 1);
+            console.log(randomNumbers + 1);
+            break;
+        case "Change Transportation":
+            alert("Your new transportation will be: " + randomnumbersS + 1);
+            console.log(randomNumbersS + 1);
+            break;
+        case "Change Entertainment":
+            alert("Your new entertainment will me " + randomNumbersSS + 1 );
+            break;
+        case "I am happy with my random day choices!":
+            alert("Check the console for your super cool trip!");
+            console.log("User is happy with random trip!");
+            break;
+        default:
+            console.log()
+
+
+    }
 
 
 
