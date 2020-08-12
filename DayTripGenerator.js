@@ -9,15 +9,15 @@ function destinationLogic () {
     let randomRestaurant = ['Firehouse Subs', 'Applebees', 'Olive Garden', 'Bonefish Grill'];
     let restaurantChoice = randomRestaurant[Math.floor(Math.random() * randomRestaurant.length)];
 
-    let randomTranspo = ['Subway', 'Airplane', 'Boat', 'Dragon'];
-    let transpoChoice = randomTranspo[Math.floor(Math.random() * randomTranspo.length)];
+    let randomTransportation = ['Subway', 'Airplane', 'Boat', 'Dragon'];
+    let transpoChoice = randomTransportation[Math.floor(Math.random() * randomTransportation.length)];
 
-    let randomEntertain = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
-    let entertainChoice = randomEntertain[Math.floor(Math.random() * randomEntertain.length)];
+    let randomEntertainment = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
+    let entertainmentChoice = randomEntertainment[Math.floor(Math.random() * randomEntertainment.length)];
 
 }
 
-runprogram ();
+runProgram ();
 
 
 
@@ -26,10 +26,11 @@ function runProgram(){
 
     selectrandomDestination();
     selectRandomRestaurant();
-    selectRandomTranspo();
-    selectRandomEntertain();
+    selectRandomTransportation();
+    selectRandomEntertainment();
     reSelectRandomChoices();
     getUserInputForDestinationChoices ();
+    switchCase();
 }
 
 function selectrandomDestination() {  
@@ -78,10 +79,10 @@ function selectRandomTransportation () {
 function selectRandomEntertainment () {
 
     let randomEntertainment = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
-    let entertainChoice = randomEntertainment[Math.floor(Math.random() * randomEntertainment.length)];{
+    let entertainmentChoice = randomEntertainment[Math.floor(Math.random() * randomEntertainment.length)];{
                 
         console.log("Your entertainment for the evening will be " + entertainmentChoice);
-        let userInput = reSelectRandomChoices ();
+        reSelectRandomChoices ();
        
         return entertainmentChoice
   
@@ -100,6 +101,7 @@ function reSelectRandomChoices () {
 
 }       
          else if(userInput === "No") {
+            getUserInputForDestinationChoices();
             switchCase ()
         
     }
