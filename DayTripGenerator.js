@@ -1,19 +1,39 @@
 "use strict";
 
 
-runprogram ();
+function destinationLogic () {
 
+    let randomDestination = ['Queens, NY', 'Tampa, FL', 'Virginia Beach, VA', 'Napa Valley, CA'];
+    let destinationChoice = randomDestination[Math.floor(Math.random() * randomDestination.length)];
+
+    let randomRestaurant = ['Firehouse Subs', 'Applebees', 'Olive Garden', 'Bonefish Grill'];
+    let restaurantChoice = randomRestaurant[Math.floor(Math.random() * randomRestaurant.length)];
+
+    let randomTranspo = ['Subway', 'Airplane', 'Boat', 'Dragon'];
+    let transpoChoice = randomTranspo[Math.floor(Math.random() * randomTranspo.length)];
+
+
+    let randomEntertain = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
+    let entertainChoice = randomEntertain[Math.floor(Math.random() * randomEntertain.length)];
+
+}
+
+runprogram ();
+//pull destination logic out of runporgram and into its own function
+//Add a return to each individual function
+//Recall the appropriate function in each case in the switchcase
 
 function runprogram () {  
 
     let randomDestination = ['Queens, NY', 'Tampa, FL', 'Virginia Beach, VA', 'Napa Valley, CA'];
-    let randomNumber = randomDestination[Math.floor(Math.random() * randomDestination.length)];{
+    let destinationChoice = randomDestination[Math.floor(Math.random() * randomDestination.length)];{
     
-        console.log("your going to visit the exotic " + randomNumber);
+        console.log("your going to visit the exotic " + destinationChoice);
 
+        return destinationChoice; 
 
     let randomRestaurant = selectRandomRestaurant();
-
+    let randomTranspo = selectRandomTranspo ();
     }
 }
 
@@ -21,12 +41,12 @@ function runprogram () {
 function selectRandomRestaurant () {
 
     let randomRestaurant = ['Firehouse Subs', 'Applebees', 'Olive Garden', 'Bonefish Grill'];
-    let randomNumbers = randomRestaurant[Math.floor(Math.random() * randomRestaurant.length)];{
+    let restaurantChoice = randomRestaurant[Math.floor(Math.random() * randomRestaurant.length)];{
     
-        console.log("You will dine at the world famous " + randomNumbers);
+        console.log("You will dine at the world famous " + restaurantChoice);
 
-
-    let randomTranspo = selectRandomTranspo ();
+        return restaurantChoice;
+    
 
     }
 }
@@ -35,26 +55,27 @@ function selectRandomRestaurant () {
 function selectRandomTranspo () {
 
     let randomTranspo = ['Subway', 'Airplane', 'Boat', 'Dragon'];
-    let randomNumbersS = randomTranspo[Math.floor(Math.random() * randomTranspo.length)];{
+    let transpoChoice = randomTranspo[Math.floor(Math.random() * randomTranspo.length)];{
             
-         console.log("First class all the way while you travel around on a " + randomNumbersS);
-       
+         console.log("First class all the way while you travel around on a " + transpoChoice);
+        
+         return transpoChoice;
          
-    let randomEntertainment = selectRandomEntertainment ();
-
+    let randomEntertainment = selectRandomEntertain ();
+    let userInput = reSelectRandomChoices ();
     }
 }
 
 
-function selectRandomEntertainment () {
+function selectRandomEntertain () {
 
-    let randomEntertainment = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
-    let randomNumbersSS = randomEntertainment[Math.floor(Math.random() * randomEntertainment.length)];{
+    let randomEntertain = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
+    let entertainChoice = randomEntertain[Math.floor(Math.random() * randomEntertain.length)];{
                 
-        console.log("Your entertainment for the evening will be " + randomNumbersSS);
+        console.log("Your entertainment for the evening will be " + entertainChoice);
           
-        
-    let userInput = reSelectRandomChoices ();
+        return entertainChoice
+  
 
     }
 }
@@ -77,25 +98,32 @@ function reSelectRandomChoices () {
 
 
 function switchCase () {
+
     let userInput;
     userInput = prompt("Enter 1 to change destination. 2 to change your restaurant. 3 to change your transportation. 4 to change your entertainment. 5 if you have no idea how you got here, but know you wanna leave")
+    
     switch(userInput)
     {
         case "1":
-            alert("your new destination choice is " + randomNumber + 1);
-            console.log("user changed there destination to: " + randomNumber + 1);
+            return destinationChoice;
+            alert("your new destination choice is " + destinationChoice);
+            console.log("user changed there destination to: " + destinationChoice);
             break;
         case "2":
-            alert("Your new restaurant choice is " + randomNumbers + 1);
-            console.log("user changed their restaurant to: " + randomNumbers + 1);
+            return restaurantChoice;
+            alert("Your new restaurant choice is " + restaurantChoice);
+            console.log("user changed their restaurant to: " + restaurantChoice);
             break;
         case "3":
-            alert("Your new transportation will be: " + randomnumbersS + 1);
-            console.log("user changed their transportation to: " + randomNumbersS + 1);
+            return transpoChoice;
+            let newTrans = selectRandomTranspo();
+            alert("Your new transportation will be: " + transpoChoice);
+            console.log("user changed their transportation to: " + transpoChoice);
             break;
         case "4":
-            alert("Your new entertainment will me " + randomNumbersSS + 1);
-            console.log("user changed their entertainment to " + randomNumbersSS + 1)
+            return entertainChoice;
+            alert("Your new entertainment will me " + entertainChoice);
+            console.log("user changed their entertainment to " + entertainChoice);
             break;
         case "5":
             alert("That's okay! Your still alright in our book!");
