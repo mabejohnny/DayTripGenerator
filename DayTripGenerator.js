@@ -10,7 +10,7 @@ function destinationLogic () {
     let restaurantChoice = randomRestaurant[Math.floor(Math.random() * randomRestaurant.length)];
 
     let randomTransportation = ['Subway', 'Airplane', 'Boat', 'Dragon'];
-    let transpoChoice = randomTransportation[Math.floor(Math.random() * randomTransportation.length)];
+    let transportationChoice = randomTransportation[Math.floor(Math.random() * randomTransportation.length)];
 
     let randomEntertainment = ['Movies', 'Mini Golf', 'Baseball Game', 'Drinks'];
     let entertainmentChoice = randomEntertainment[Math.floor(Math.random() * randomEntertainment.length)];
@@ -30,7 +30,7 @@ function runProgram(){
     selectRandomEntertainment();
     reSelectRandomChoices();
     getUserInputForDestinationChoices ();
-    switchCase();
+
 }
 
 function selectrandomDestination() {  
@@ -69,6 +69,7 @@ function selectRandomTransportation () {
             
          console.log("First class all the way while you travel around on a " + transportationChoice);
          let randomEntertainment = selectRandomEntertainment ();
+
          return transportationChoice;
          
 
@@ -95,9 +96,11 @@ function reSelectRandomChoices () {
 
     let userInput = prompt("Enter Yes if you are satisfied with your trip, if not, enter No");
 
-        if(userInput === "Yes"){
-            console.log("The user is satisfied with their trip!");
+        if(userInput === "Yes"){  
             alert("Your trip is booked!");
+            console.log("The user is satisfied with their trip!");
+            
+            
 
 }       
          else if(userInput === "No") {
@@ -122,17 +125,17 @@ function getUserInputForDestinationChoices () {
             console.log("user changed there destination to: " + destinationChoice);
             break;
         case "2":
-           let newRestaurant = selectRandomRestaurant();
+           let restaurantChoice = selectRandomRestaurant();
             alert("Your new restaurant choice is " + restaurantChoice);
             console.log("user changed their restaurant to: " + restaurantChoice);
             break;
         case "3":
-            let newTransportation = selectRandomTransportation();
+            let transportationChoice = selectRandomTransportation();
             alert("Your new transportation will be: " + transportationChoice);
             console.log("user changed their transportation to: " + transportationChoice);
             break;
         case "4":
-            let newEntertainment = selectRandomEntertainment();
+            let entertainmentChoice = selectRandomEntertainment();
             alert("Your new entertainment will me " + entertainmentChoice);
             console.log("user changed their entertainment to " + entertainmentChoice);
             break;
